@@ -50,8 +50,7 @@
             var positionX = 0;
             var speedX = 10;
             var points = 0;
-
-
+            var randNum = Math.random(1) * (boardWidth);
             /* 
             This Function will be called 20 times/second. Each time it is called,
             it should move the Box to a new location. If the box drifts off the screen
@@ -79,8 +78,8 @@
                 points += 1;
                 $box.text(points);
                 speedX += 3;
-                positionX = 0;
-
+                positionX = randNum;
+                
             };
 
         });
