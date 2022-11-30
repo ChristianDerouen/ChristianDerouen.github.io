@@ -7,7 +7,7 @@
 		.box {
             width: 70px;
             height: 70px;
-            background-color: teal;
+            background-color: white;
             font-size: 300%;
             text-align: center;
             position: absolute;
@@ -51,6 +51,15 @@
             var speedX = 10;
             var points = 0;
             var randNum = Math.random(1) * (boardWidth);
+            var rgb = Math.random() * (255);
+            var rgb2 = Math.random() * (255);
+            var rgb3 = Math.random() * (255);
+            var color = (("rgb")+(rgb)+(rgb)+(rgb));
+
+            
+            
+            
+            
             /* 
             This Function will be called 20 times/second. Each time it is called,
             it should move the Box to a new location. If the box drifts off the screen
@@ -59,7 +68,6 @@
             function update() {
                 positionX += speedX;
                 $box.css("left", positionX);
-               
                 if (positionX > boardWidth) {
                     speedX = -speedX;
                 }
@@ -77,10 +85,16 @@
 
                 points += 1;
                 $box.text(points);
-                speedX += 3;
                 positionX = randNum;
-                
-            };
+                if (speedX > 0) {
+                  speedX += 3
+                }
+                else if (speedX < 0) {
+                  speedX -= 3 
+                }
+                $box.css('background-color', color);
+
+            }
 
         });
 	</script>
