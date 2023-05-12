@@ -51,7 +51,7 @@ var background = function (window) {
             moon.scaleY = .9;
             background.addChild(moon);
 
-            for (var i = 0; i < 100; i++) {
+            for (var i = 0; i < 200; i++) {
                 var circle = draw.circle(10, "lightBlue", "LightGray", 2);
                 circle.x = canvasWidth * Math.random();
                 circle.y = groundY * Math.random();
@@ -62,13 +62,28 @@ var background = function (window) {
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
            
             for (var i = 0; i < 5; ++i) {
-                var buildingHeight = 300;
-                var building = draw.rect(75, buildingHeight, "LightGray", "Black", 1);
+                var buildingHeight = (Math.random(150) * 300);
+                var building = draw.rect(75, buildingHeight, "Lightblue", "Black", 2);
                 building.x = 200 * i;
                 building.y = groundY - buildingHeight;
                 background.addChild(building);
                 buildings.push(building);
               }
+
+              
+for (var i = 0; i < buildings.length; i++){
+                building = buildings[i]
+                var building;
+                building.x = building.x -1;
+                if (building.x < -200){
+                    building.x = canvasWidth;
+                }
+                
+            }
+
+              
+
+
             // TODO 4: Part 1 - Add a tree
             tree = draw.bitmap("img/tree.png");
             tree.x = 300;
@@ -93,8 +108,16 @@ var background = function (window) {
             }
             
             // TODO 5: Part 2 - Parallax
-            
 
+            for (var i = 0; i < buildings.length; i++){
+                building = buildings[i]
+                var building;
+                building.x = building.x -1;
+                if (building.x < -200){
+                    building.x = canvasWidth;
+                }
+                
+            }
         } // end of update function - DO NOT DELETE
         
         
