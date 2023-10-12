@@ -11,13 +11,13 @@ var highScoreElement = $("#highScore");
 
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
-snake = {
+var snake = {
 
 };
-apple = {
+var apple = {
 
 };
-score = 0;
+var score = 0;
 // Constant Variables
 var ROWS = 20;
 var COLUMNS = 20;
@@ -354,7 +354,11 @@ function getRandomAvailablePosition() {
     not occupied by a snakeSquare in the snake's body. If it is then set 
     spaceIsAvailable to false so that a new position is generated.
     */
-   
+   for (var i = 1; i <= snakeSquare.length; i++){
+    if (snakeSquare.random === snakeSquare.row && snakeSquare.random === snakeSquare.column){
+      return false;
+    }
+   }
   }
 
   return randomPosition;
