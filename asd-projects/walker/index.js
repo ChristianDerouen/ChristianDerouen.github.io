@@ -29,6 +29,7 @@ function runProgram(){
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
   $(document).on('keyup', handleKeyUp);   
+  $("#walker").css('backGround-color', randomColor); 
   
   
   ////////////////////////////////////////////////////////////////////////////////
@@ -104,7 +105,7 @@ function runProgram(){
     var randomColor = "#000000".replace(/0/g, function () {
       return (~~(Math.random() * 16)).toString(16);
     });
-    $("#walker").css("backGround-color", randomColor); 
+    $("#walker").css('background-color', randomColor); 
   }
 
 
